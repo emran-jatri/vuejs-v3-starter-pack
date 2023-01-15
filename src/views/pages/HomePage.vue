@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, reactive, onMounted } from "vue";
+import { usePostStore } from "../../stores/post";
 
 onMounted(() => {
   console.log(`the component is now mounted.`);
@@ -8,6 +9,8 @@ onMounted(() => {
 const countOne = ref(0);
 // console.log("🚀 ~ file: HomePage.vue:5 ~ countOne", countOne.value);
 const counter = reactive({ countTwo: 0 });
+const postStore = usePostStore();
+console.log("----------------->", postStore.getPosts);
 // console.log("🚀 ~ file: HomePage.vue:7 ~ counter", counter);
 </script>
 
